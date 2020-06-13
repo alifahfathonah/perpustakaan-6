@@ -11,7 +11,7 @@ class Peminjaman extends Operator_Controller {
 		$peminjamans = $this->peminjaman->getAll($page);
 		$jumlah = $this->peminjaman->total();
 		$pagination = $this->peminjaman->makePagination(site_url("Peminjaman"), 2, $jumlah);
-		$main_view = "peminjaman/index";
+		$main_view = "Peminjaman/index";
 		$this->load->view("Template", compact("main_view", "jumlah","peminjamans", "pagination"));
 	}
 
@@ -30,8 +30,8 @@ class Peminjaman extends Operator_Controller {
 			$buku = $this->peminjaman->get_buku();
 			$judul_selected = "";
 			$buku_selected = "";
-			$main_view = "peminjaman/Form";
-			$form_action = "peminjaman/create";
+			$main_view = "Peminjaman/Form";
+			$form_action = "Peminjaman/create";
 			$this->load->view("Template", compact("input", "main_view", "form_action", "judul", "buku", "judul_selected", "buku_selected"));
 			return;
 		}
@@ -49,7 +49,7 @@ class Peminjaman extends Operator_Controller {
 			$this->session->set_flashdata("error", "Data Gagal di Jalankan");
 		}
 
-		redirect("peminjaman");
+		redirect("Peminjaman");
 	}
 
 	public function delete()

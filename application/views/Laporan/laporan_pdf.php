@@ -13,7 +13,7 @@
 <?php $i = 0; ?>
 <div class="container">
   <h2>Daftar Siswa Yang Meminjam Buku</h2>
-  <p>Smk Fadilah</p>            
+  <p></p>            
   <table class="table">
     <thead>
       <tr>

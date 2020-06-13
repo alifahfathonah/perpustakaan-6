@@ -13,7 +13,7 @@ class Siswa extends Operator_Controller {
 		$siswas = $this->siswa->getAll($page);
 		$jumlah = $this->siswa->total();
 		$pagination = $this->siswa->makePagination(site_url("siswa"), 2, $jumlah);
-		$main_view = "siswa/index";
+		$main_view = "Siswa/Index";
 		$this->load->view("Template", compact("main_view", "jumlah","siswas", "pagination"));
 	}
 
@@ -28,8 +28,8 @@ class Siswa extends Operator_Controller {
 
 		if(!$this->siswa->validate())
 		{
-			$main_view = "siswa/Form";
-			$form_action = "siswa/create";
+			$main_view = "Siswa/Form";
+			$form_action = "Siswa/create";
 			$this->load->view("Template", compact("input", "main_view", "form_action"));
 			return;
 		}
@@ -44,7 +44,7 @@ class Siswa extends Operator_Controller {
 			$this->session->set_flashdata("error", "Data Gagal di Jalankan");
 		}
 
-		redirect("siswa");
+		redirect("Siswa");
 	}
 
 	public function edit($id_siswa)
@@ -54,7 +54,7 @@ class Siswa extends Operator_Controller {
 		if(!$siswa)
 		{
 			$this->session->set_flashdata("error", "Data Tidak Di Temukan");
-			redirect("siswa");
+			redirect("Siswa");
 		}
 
 		if(!$_POST)
@@ -71,8 +71,8 @@ class Siswa extends Operator_Controller {
 
 		if(!$this->siswa->validate())
 		{
-			$main_view = "siswa/Form";
-			$form_action = "siswa/edit/$id_siswa";
+			$main_view = "Siswa/Form";
+			$form_action = "Siswa/edit/$id_siswa";
 			$this->load->view("Template", compact("main_view", "input", "form_action"));
 			return;
 		}
@@ -86,7 +86,7 @@ class Siswa extends Operator_Controller {
 			$this->session->set_flashdata("error", "Data Gagal di Update");
 		}
 
-		redirect("siswa");
+		redirect("Siswa");
 	}
 
 	public function delete()
@@ -97,7 +97,7 @@ class Siswa extends Operator_Controller {
 		if(!$siswa)
 		{
 			$this->session->set_flashdata("error", "Data Gagal Di Hapus");
-			redirect("siswa");
+			redirect("Siswa");
 		}
 
 		if($this->siswa->where("id_siswa", $id_siswa)->delete())
@@ -109,7 +109,7 @@ class Siswa extends Operator_Controller {
 			$this->session->set_flashdata('error', 'Data Gagal Di Hapus');
 		}
 
-		redirect('siswa');
+		redirect('Siswa');
 	}
 
 	public function nis_unik()

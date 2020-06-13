@@ -12,7 +12,7 @@ class Denda extends Operator_Controller {
 		$dendas = $this->denda->getAll($page);
 		$jumlah = $this->denda->total();
 		$pagination = $this->denda->makePagination(site_url("Denda"), 2, $jumlah);
-		$main_view = "denda/index";
+		$main_view = "Denda/Index";
 		$this->load->view("Template", compact("main_view", "jumlah","dendas", "pagination"));
 	}
 

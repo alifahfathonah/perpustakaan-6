@@ -30,7 +30,7 @@ class Profile extends Operator_Controller {
 		if(!$this->profile->validate())
 		{
 			$main_view = "Profile_form";
-			$form_action = "profile/gantiPass";
+			$form_action = "Profile/gantiPass";
 			$this->load->view("Template", compact("form_action", "input", "main_view"));
 			return;
 		}
@@ -104,7 +104,7 @@ class Profile extends Operator_Controller {
 		if(!$this->profile->validate2() || $this->form_validation->error_array())
 		{
 			$main_view = "Form_foto";
-			$form_action = "profile/gantiFoto";
+			$form_action = "Profile/gantiFoto";
 			$this->load->view("Template", compact("main_view", "input", "form_action"));
 			return;
 		}
@@ -119,7 +119,7 @@ class Profile extends Operator_Controller {
 			$this->session->set_flashdata("error", "Data Gagal di Update");
 		}
 
-		redirect("profile");
+		redirect("Profile");
 
 	}
 

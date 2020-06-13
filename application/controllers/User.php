@@ -13,7 +13,7 @@ class User extends Admin_Controller {
 		$users = $this->user->getAll($page);
 		$jumlah = $this->user->total();
 		$pagination = $this->user->makePagination(site_url("user"), 2, $jumlah);
-		$main_view = "user/index";
+		$main_view = "User/Index";
 		$this->load->view("Template", compact("main_view", "jumlah","users", "pagination"));
 	}
 
@@ -28,8 +28,8 @@ class User extends Admin_Controller {
 
 		if(!$this->user->validate())
 		{
-			$main_view = "user/Form";
-			$form_action = "user/create";
+			$main_view = "User/Form";
+			$form_action = "User/create";
 			$this->load->view("Template", compact("input", "main_view", "form_action"));
 			return;
 		}
@@ -46,7 +46,7 @@ class User extends Admin_Controller {
 			$this->session->set_flashdata("error", "Data Gagal di Jalankan");
 		}
 
-		redirect("user");
+		redirect("User");
 	}
 
 	public function edit($id_user)
@@ -56,7 +56,7 @@ class User extends Admin_Controller {
 		if(!$user)
 		{
 			$this->session->set_flashdata("error", "Data Tidak Di Temukan");
-			redirect("user");
+			redirect("User");
 		}
 
 		if(!$_POST)
@@ -73,8 +73,8 @@ class User extends Admin_Controller {
 
 		if(!$this->user->validate())
 		{
-			$main_view = "user/Form";
-			$form_action = "user/edit/$id_user";
+			$main_view = "User/Form";
+			$form_action = "User/edit/$id_user";
 			$this->load->view("Template", compact("main_view", "input", "form_action"));
 			return;
 		}
@@ -88,7 +88,7 @@ class User extends Admin_Controller {
 			$this->session->set_flashdata("error", "Data Gagal di Update");
 		}
 
-		redirect("user");
+		redirect("User");
 	}
 
 	public function delete()
@@ -99,7 +99,7 @@ class User extends Admin_Controller {
 		if(!$user)
 		{
 			$this->session->set_flashdata("error", "Data Gagal Di Hapus");
-			redirect("user");
+			redirect("User");
 		}
 
 		if($this->user->where("id_user", $id_user)->delete())
@@ -111,7 +111,7 @@ class User extends Admin_Controller {
 			$this->session->set_flashdata('error', 'Data Gagal Di Hapus');
 		}
 
-		redirect('user');
+		redirect('User');
 	}
 
 	public function blokir() {
@@ -142,13 +142,13 @@ class User extends Admin_Controller {
 		if($this->db->where("id_user", $id_user)->update("user", ["is_blokir" => "n"])) {
 
 			$this->session->set_flashdata("success", "user Berhasil Di Un Block");
-			redirect("user");
+			redirect("User");
 
 		}
 		else {
 
 			$this->session->set_flashdata("error", "user Gagal Di Un Blokir");
-			redirect("user");
+			redirect("User");
 
 		}
 

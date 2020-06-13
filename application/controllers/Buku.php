@@ -13,7 +13,7 @@ class buku extends Operator_Controller {
 		$bukus = $this->buku->getAll($page);
 		$jumlah = $this->buku->total();
 		$pagination = $this->buku->makePagination(site_url("Buku"), 2, $jumlah);
-		$main_view = "buku/index";
+		$main_view = "Buku/Index";
 		$this->load->view("Template", compact("main_view", "jumlah","bukus", "pagination"));
 	}
 
@@ -28,8 +28,8 @@ class buku extends Operator_Controller {
 
 		if(!$this->buku->validate())
 		{
-			$main_view = "buku/Form";
-			$form_action = "buku/create";
+			$main_view = "Buku/Form";
+			$form_action = "Buku/create";
 			$this->load->view("Template", compact("input", "main_view", "form_action"));
 			return;
 		}
@@ -56,7 +56,7 @@ class buku extends Operator_Controller {
 			$this->session->set_flashdata("error", "Data Gagal di Jalankan");
 		}
 
-		redirect("buku");
+		redirect("Buku");
 	}
 
 	public function edit($id_buku)
@@ -66,7 +66,7 @@ class buku extends Operator_Controller {
 		if(!$buku)
 		{
 			$this->session->set_flashdata("error", "Data Tidak Di Temukan");
-			redirect("buku");
+			redirect("Buku");
 		}
 
 		if(!$_POST)
@@ -83,8 +83,8 @@ class buku extends Operator_Controller {
 
 		if(!$this->buku->validate())
 		{
-			$main_view = "buku/Form";
-			$form_action = "buku/edit/$id_buku";
+			$main_view = "Buku/Form";
+			$form_action = "Buku/edit/$id_buku";
 			$this->load->view("Template", compact("main_view", "input", "form_action"));
 			return;
 		}
@@ -98,7 +98,7 @@ class buku extends Operator_Controller {
 			$this->session->set_flashdata("error", "Data Gagal di Update");
 		}
 
-		redirect("buku");
+		redirect("Buku");
 	}
 
 	public function delete()
@@ -109,7 +109,7 @@ class buku extends Operator_Controller {
 		if(!$buku)
 		{
 			$this->session->set_flashdata("error", "Data Gagal Di Hapus");
-			redirect("buku");
+			redirect("Buku");
 		}
 
 		if($this->buku->where("id_buku", $id_buku)->delete())
@@ -121,7 +121,7 @@ class buku extends Operator_Controller {
 			$this->session->set_flashdata('error', 'Data Gagal Di Hapus');
 		}
 
-		redirect('buku');
+		redirect('Buku');
 	}
 
 	public function kode_buku_unik()
@@ -153,7 +153,7 @@ class buku extends Operator_Controller {
 		if(!$bukus)
 		{
 			$this->session->set_flashdata("error", "Data Tidak Di Temukan");
-			redirect("buku");
+			redirect("Buku");
 		}
 		
 		$main_view = "buku/Index";

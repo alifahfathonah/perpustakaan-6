@@ -11,7 +11,7 @@ class Pengembalian extends Operator_Controller {
 		$pengembalians = $this->pengembalian->getAll($page);
 		$jumlah = $this->pengembalian->total();
 		$pagination = $this->pengembalian->makePagination(site_url("Pengembalian"), 2, $jumlah);
-		$main_view = "pengembalian/index";
+		$main_view = "Pengembalian/Index";
 		$this->load->view("Template", compact("main_view", "jumlah","pengembalians", "pagination"));
 	}
 

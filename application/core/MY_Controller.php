@@ -8,8 +8,10 @@ class MY_Controller extends CI_Controller
         parent::__construct();
 
         $model = strtolower(get_class($this));
-        if (file_exists(APPPATH . 'models/' . $model . '_model.php')) {
-            $this->load->model($model . '_model', $model, true);
+        $modelVal = ucwords($model);
+        $test = file_exists('./application/models/'. $modelVal .'_model.php');
+        if (file_exists('./application/models/'. $modelVal .'_model.php')) {
+            $this->load->model($modelVal.'_model', $model, true);
         }
-    }
+     }
 }

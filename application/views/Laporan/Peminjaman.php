@@ -6,6 +6,15 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
+<script type="text/javascript">
+    $('.datepicker').datepicker({
+    format: 'mm/dd/yyyy',
+    startDate: '-3d'
+});
+</script>
+
+
+
 <div class="title_left" align="center">
        <h3><small></small><br />Form laporan peminjaman</h3>
 </div>
@@ -68,6 +77,7 @@
                     <div class="form-group">
                         <?= form_label('Tanggal Awal', 'first-name', ["class" => "control-label col-md-3 col-sm-3 col-xs-12"]) ?>
                         <div class="col-md-6 col-sm-6 col-xs-12">
+
                             <?= form_input('tanggal_awal', $input->tanggal_awal, ["id" => "single_cal2", "required" => "required", "class" => "form-control has-feedback-left", "placeholder" => "First Name", "aria-describedby" => "inputSuccess2Status2"]) ?>
                             <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
                         </div>
@@ -156,7 +166,7 @@
         type: 'pie'
     },
     title: {
-        text: 'Siswa Smk Fadilah Yang Paling Banyak Meminjam Buku'
+        text: 'Siswa Yang Paling Banyak Meminjam Buku'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
