@@ -87,7 +87,7 @@ class Laporan extends Operator_Controller {
          $data1 = $this->laporan->bukuKembali();
          $data2 = $this->laporan->bukuPinjam();
          $jumlah_total = count($pengembalians);
-         $main_view    = 'Laporan/pengembalian';
+         $main_view    = 'Laporan/Pengembalian';
          $form_action  = 'Laporan/laporan_pengembalian';
          $this->load->view('Template', compact('main_view', 'input', 'pengembalians', 'jumlah_total', 'first_load', 'form_action', 'tanggalAwal', 'tanggalAkhir', "data1", "data2"));
     }
