@@ -37,7 +37,7 @@ class Laporan extends Operator_Controller {
 		 $jumlah_total = count($peminjamans);
 		 $main_view    = 'Laporan/Peminjaman';
 		 $form_action  = 'Laporan/laporan_peminjaman';
-		 $this->load->view('template', compact('main_view', 'input', 'peminjamans', 'jumlah_total', 'first_load', 'form_action', 'tanggalAwal', 'tanggalAkhir', "data"));
+		 $this->load->view('Template', compact('main_view', 'input', 'peminjamans', 'jumlah_total', 'first_load', 'form_action', 'tanggalAwal', 'tanggalAkhir', "data"));
     }
 
     public function download($tanggalAwal, $tanggalAkhir) {
@@ -89,7 +89,7 @@ class Laporan extends Operator_Controller {
          $jumlah_total = count($pengembalians);
          $main_view    = 'Laporan/pengembalian';
          $form_action  = 'Laporan/laporan_pengembalian';
-         $this->load->view('template', compact('main_view', 'input', 'pengembalians', 'jumlah_total', 'first_load', 'form_action', 'tanggalAwal', 'tanggalAkhir', "data1", "data2"));
+         $this->load->view('Template', compact('main_view', 'input', 'pengembalians', 'jumlah_total', 'first_load', 'form_action', 'tanggalAwal', 'tanggalAkhir', "data1", "data2"));
     }
 
 

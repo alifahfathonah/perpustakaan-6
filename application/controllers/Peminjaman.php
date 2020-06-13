@@ -11,7 +11,7 @@ class Peminjaman extends Operator_Controller {
 		$peminjamans = $this->peminjaman->getAll($page);
 		$jumlah = $this->peminjaman->total();
 		$pagination = $this->peminjaman->makePagination(site_url("Peminjaman"), 2, $jumlah);
-		$main_view = "Peminjaman/index";
+		$main_view = "Peminjaman/Index";
 		$this->load->view("Template", compact("main_view", "jumlah","peminjamans", "pagination"));
 	}
 
