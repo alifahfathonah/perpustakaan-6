@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Judul extends Operator_controller {
+class Judul extends Operator_Controller {
 
 
 	public function __construct() {
