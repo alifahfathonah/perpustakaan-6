@@ -339,7 +339,7 @@ $profile = $this->session->userdata("profile");
                 <img class="nav-user-photo" src="<?php echo base_url(); ?>asset/assets/images/avatars/user.jpg" alt="Jason's Photo" />
                 <span class="user-info">
                   <small>Welcome,</small>
-                  Christoper
+                  Mister
                 </span>
 
                 <i class="ace-icon fa fa-caret-down"></i>
